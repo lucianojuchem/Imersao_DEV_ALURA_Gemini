@@ -1,13 +1,30 @@
 function aprender() {
     let section = document.getElementById("resultados-pesquisa");
 
+    let campoPesquisa = document.getElementById("campo-pesquisa").value;
+
+    if (campoPesquisa == "") {
+        section.innerHTML = "<p>Digite uma Linguagem por favor! </p>"
+        return
+    }
+
+    campoPesquisa = campoPesquisa.toLowerCase();
+
     let resultados = "";
+    let nome = "";
+    let descricao = "";
+    let aplicacao = "";
 
     for (let linguagem of linguagens) {
-        resultados += `
+        nome = linguagem.nome.toLowerCase();
+        descricao = linguagem.descricao.toLowerCase();
+        aplicacao = linguagem.aplicacao.toLowerCase();
+
+        if (nome.includes(campoPesquisa) || descricao.includes(campoPesquisa) || aplicacao.includes(campoPesquisa)) {
+            resultados += `
             <div class="item-resultado">
                 <h2>
-                    <a href="#" target="_blank">${linguagem.nome}</a>
+                    <a href="${linguagem.link}" target="_blank">${linguagem.nome}</a>
                 </h2>
                 <h4> Descrição </h4>
                 <p class="descricao-meta">${linguagem.descricao}</p>
@@ -19,6 +36,7 @@ function aprender() {
                 <a href=${linguagem.link} target="_blank">Site para mais informações</a>
             </div>
         `;
+        }
     }
     section.innerHTML = resultados;
 }
