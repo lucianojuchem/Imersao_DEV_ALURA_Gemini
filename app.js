@@ -32,8 +32,9 @@ function aprender() {
                 <p class="descricao-meta">${linguagem.aplicacao}</p>
                 <h4> Sintaxe </h4>
                 <p class="descricao-meta">${linguagem.sintaxe}</p>
+                <p class="descricao-meta">${linguagem.IDE}</p> 
                 <br>
-                <a href=${linguagem.link} target="_blank">Site para mais informações</a>
+                <a href=${linguagem.link} target="_blank">Mais informações</a>
             </div>
         `;
         }
