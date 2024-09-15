@@ -15,13 +15,14 @@ function aprender() {
     let descricao = "";
     let aplicacao = "";
     let ide = "";
+   
 
     for (let linguagem of linguagens) {
         nome = linguagem.nome.toLowerCase();
         descricao = linguagem.descricao.toLowerCase();
         aplicacao = linguagem.aplicacao.toLowerCase();
         ide = linguagem.IDE.toLowerCase();
-
+    
         if (nome.includes(campoPesquisa) || descricao.includes(campoPesquisa) || aplicacao.includes(campoPesquisa) || ide.includes(campoPesquisa)) {
             resultados += `
             <div class="item-resultado">
